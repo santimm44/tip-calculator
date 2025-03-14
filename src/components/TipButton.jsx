@@ -1,14 +1,11 @@
+export const TipButton = ({tips, onClick, percentTrue}) => {
 
-import React, { useState } from "react";
-
-export const TipButton = ({tips, onClick}) => {
-  
   return (
     <button
     onClick={()=>onClick(tips)}
-    className="bg-veryDarkCyan w-full text-center text-white rounded-sm hover:bg-strongCyan hover:text-veryDarkCyan"
+    className={` ${percentTrue == true? "bg-strongCyan text-veryDarkCyan": "bg-veryDarkCyan text-white"} w-full text-center  rounded-sm hover:bg-strongCyan hover:text-veryDarkCyan`}
     >
-      <h2 className="w-full ">{tips}%</h2>
+      <h2 className="w-full text-[35px]">{tips}%</h2>
     </button>
   );
 };
